@@ -1,0 +1,7 @@
+# What your virtual environment should contain to run the project
+pyhton 3.10
+pip 25.1
+Django 5.2
+psycopg2 2.9.5 # for PostgreSQL
+rest-fraemwork 
+django-cors-headers
