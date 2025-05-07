@@ -1,6 +1,6 @@
 # What your virtual environment should contain to run the project
-pyhton 3.10
-pip 25.1
+pyhton 3.10 or higher
+pip 25.1 or higher
 Django 5.2
 psycopg2 2.9.5 # for PostgreSQL
 rest-fraemwork 
