@@ -8,7 +8,31 @@
 <body>
     <h3>Hello from index</h3>
     <div>
+        <h3>Store Info</h3>
+            <div>
+                <h4>{{ store.name }}</h4>
+                <p>{{ store.description }}</p>
+                <img src="media/{{ store.logo }}" alt="logo" />
+            </div>
+    </div>
+    <!-- <div>
         <a href="{% url 'home' %}">go home</a>
+        {% for product in products %}
+            <div>
+                <h4>{{ product.name }}</h4>
+                <p>{{ product.description }}</p>
+                <p>Price: {{ product.price }}</p>
+            </div>
+        {% endfor %}
+    </div> --> 
+    <div>
+        {% for order in orders %}
+            <div>
+                <h4>{{ order.client }}</h4>
+                <p>{{ order.product }}</p>
+                <p>Price: {{ order.store }}</p>
+            </div>
+        {% endfor %}
     </div>
 </body>
 </html>
