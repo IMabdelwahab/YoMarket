@@ -18,7 +18,17 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
+from rest_framework import routers
+from app.views import *
+
+router = routers.DefaultRouter()
+router.register('clients',ClientView)
+router.register('salers',SalerView)
+router.register('categories',CategoryView)
+
+
 urlpatterns = [
     path('', include('app.urls')),  # Include the app's URLs
+    path('', include(router.urls)),  
     path('admin/', admin.site.urls),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # Serve media files in development

@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User as DjangoUser
 # Create your models here.
 
-# class DjangoUser(models.Model):
+# class DjangoUser(models.Model,DjangoUser):
 #     username = models.CharField(max_length=150, unique=True)
 #     password = models.CharField(max_length=128)
 #     email = models.EmailField(unique=True)
