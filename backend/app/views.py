@@ -24,6 +24,8 @@ class SalerView(viewsets.ModelViewSet):
     serializer_class = SalerSerializer
 
 class CategoryView(viewsets.ModelViewSet):
+    #categories = Ctegory.objects.all()
+    # queryset = categories
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
     
