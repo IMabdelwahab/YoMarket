@@ -37,6 +37,15 @@ const sampleProducts = [
         image: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=500",
         rating: 4.7
     },
+    {
+        id: 5,
+        name: "Gaming Laptop Pro",
+        description: "High-performance gaming laptop with RTX graphics and 32GB RAM.",
+        price: 1499.99,
+        image: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=500",
+        rating: 4.7
+    },
+    
 ];
 
 export default function ProductList(props) {
@@ -46,9 +55,12 @@ export default function ProductList(props) {
                 <h2 className="text-2xl font-bold text-blue-950 mb-3">{props.title}</h2>
                 <hr className='bg-blue-950 '/>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 overflow-auto">
+            <div className="flex space-x-8 min-w-[1280px] overflow-x-scroll">
                 {sampleProducts.map((product) => (
-                    <ProductCard key={product.id} product={product} />
+                    <div key={product.id} className="flex-shrink-0 w-[300px]">
+                        <ProductCard key={product.id} product={product} />
+                    </div>
+                    
                 ))}
             </div>
         </div>

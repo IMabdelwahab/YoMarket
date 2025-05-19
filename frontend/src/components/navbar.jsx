@@ -1,16 +1,17 @@
 import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 
 export default function Navbar() {
 
     useEffect(()=>{
-        getCategories()
+        axios.get('http://localhost:8000/categories')
+        .then(response =>setCategories(response.data)) // response.data is where api's data exist
+        .catch(error =>console.log(error))
     },[])
 
     const [isDropdown, setIsDropdown] = useState(false);
     const [categories, setCategories] = useState([])
-
-    const getCategories = ()=> fetch('http://localhost:8000/categories').then(resp => resp.json()).then(resp => setCategories(resp))  
 
     const displayCategories = ()=> categories.map((categorie, key)=>
             <a href="#" key={key} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">{categorie.name}</a>
@@ -32,6 +33,8 @@ export default function Navbar() {
                             <div className="relative inline-flex">
                                 <button
                                     onClick={() => setIsDropdown(!isDropdown)}
+                                    // onMouseEnter={ ()=> setIsDropdown(!isDropdown)}
+                                    // onMouseLeave={ ()=> setIsDropdown(!isDropdown)}
                                     className=" text-gray-500 hover:border-green-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                                 >
                                     Categories

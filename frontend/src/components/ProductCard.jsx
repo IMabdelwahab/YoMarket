@@ -1,13 +1,13 @@
 import { useState } from 'react';
 
 export default function ProductCard({ product }) {
-    const [isHovered, setIsHovered] = useState(false);
+    // const [isHovered, setIsHovered] = useState(false);
 
     return (
         <div 
-            className="bg-white rounded-lg  overflow-hidden transition-transform duration-300 hover:shadow-xl mb-8"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
+            className="bg-white rounded-lg overflow-hidden transition-transform duration-300 hover:shadow-xl mb-8 hover:border-2"
+            // onMouseEnter={() => setIsHovered(true)}
+            // onMouseLeave={() => setIsHovered(false)}
         >
             {/* Product Image */}
             <div className="relative h-48 overflow-hidden">
@@ -15,13 +15,13 @@ export default function ProductCard({ product }) {
                     loading='lazy'
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-110" 
                 />
             </div>
 
             {/* Product Info */}
             <div className="p-4">
-                <h3 className="text-md font-semibold text-gray-800 mb-2">{product.name}</h3>
+                <h3 className="text-md font-semibold text-gray-800 mb-2 truncate">{product.name}</h3>
                 <p className="text-gray-600 text-sm mb-3 line-clamp-2">{product.description}</p>
                 
                 {/* Price Section */}
